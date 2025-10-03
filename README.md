@@ -1,2 +1,2 @@
-# web-dev-journey
-My Odin Project-inspired web dev practice and projects.
+# Web Dev Journey
+Starting my web dev learning path with The Odin Project.
