@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    margin-bottom: 60px;
 }
 header {
     background-color: #333;
@@ -24,11 +26,46 @@ nav a:hover {
 main {
     padding: 20px;
 }
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#contact label{
+    margin: 5px;
+}
+#contact input{
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+}
+#contact button{
+    padding: 5px 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#contact button:hover{
+    background-color:#003366;
+}
+#interest{
+    padding: 20px;
+    text-align: center;
+}
+#interest ul{
+    list-style-type: square;
+    padding-left: 0;
+}
+#interest li{
+    margin: 5px 0;
+}
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
