@@ -2,7 +2,7 @@
 <html lang ="en">
     <head>
         <meta charset ="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Landing Page</title>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -12,7 +12,11 @@
         </header>
         <nav>
             <!--<a href="#home">Home</a> | <a href="#about">About</a> | <a href="#contact">Contact</a> -->
-            <a href="https://github.com/Aman-Solo/web-dev-journey" target="_blank">My GIT repo</a> | <a href="https://theodinpoject.com" target="_blank">The Odin Project</a>
+            <!--<a href="https://github.com/Aman-Solo/web-dev-journey" target="_blank">My GIT repo</a> | <a href="https://theodinpoject.com" target="_blank">The Odin Project</a> -->
+            <div class="nav-container">
+                <a href="https://theodinproject.com" target="_blank">The Odin</a>
+                <a href="https://github.com/Aman-Solo/web-dev-journey" target="_blank">My GIT repo</a>
+            </div>
         </nav>
         <main>
             <section>
@@ -33,11 +37,25 @@
             <section id="interests">
                 <h2>My Interests</h2>
                 <img src="lists.jpg" alt="My interests check" width="200">
-                <ul>
+                <!--<ul>
                     <li>Web Dev</li>
                     <li>data science</li>
                     <li>gaming</li>
-                </ul>
+                </ul>-->
+                <div class="interests-container">
+                    <div class="interests"># Web dev</div>
+                    <div class="interests"># data science</div>
+                    <div class="interests"># gaming</div>
+                </div>
+            </section>
+            <section id="cards">
+                <h2>My Skills</h2>
+                <div class="cards-grid">
+                    <div class="cards">HTML</div>
+                    <div class="cards">CSS</div>
+                    <div class="cards">Database</div>
+                    <div class="cards">DSA</div>
+                </div>
             </section>
         </main>
         <footer>

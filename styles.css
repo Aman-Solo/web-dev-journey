@@ -23,6 +23,24 @@ nav a {
 nav a:hover {
     color: #003366;
 }
+/*Flexbox for Nav*/
+.nav-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+/*Grid for cards*/
+.cards-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.cards{
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
 main {
     padding: 20px;
 }
@@ -50,10 +68,18 @@ main {
 #contact button:hover{
     background-color:#003366;
 }
-#interest{
+#interests{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 20px;
     text-align: center;
+    align-items: center;
 }
+/*#interests img{
+    width: 100%;
+    height: auto;
+}*/
 #interest ul{
     list-style-type: square;
     padding-left: 0;
@@ -85,13 +111,22 @@ footer {
     nav a{
         margin: 5px 0;
     }
+    .nav-container{
+        flex-direction: column;
+    }
+    .cards-grid{
+        grid-template-columns: 1fr;
+    }
+    .cards-grid:hover{
+        box-shadow: 0 0 10px grey;
+    }
     #contact input{
         width: 100%; /*full width input*/
     }
     img {
         width: 100%; /*responsive image*/
         height: auto;
-        box-shadow: 0 0 10px rgba(0,0,0,0,5);
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
     footer {
         position: relative;
