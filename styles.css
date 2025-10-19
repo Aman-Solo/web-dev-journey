@@ -3,22 +3,44 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem;
 }
 header {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 0.625rem;
+}
+:focus{
+    outline: 0.125rem solid #0066cc;
+    outline-offset: 0.125rem;
+}
+.skip-link{
+    position: absolute;
+    left: -624.9375rem;
+    top: auto;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    overflow: hidden;
+}
+.skip-link:focus{
+    position: static;
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 0;
+    background: #fff;
+    color: #000;
+    padding: 0.625rem;
 }
 nav {
     text-align: center;
-    padding: 10px;
+    padding: 0.625rem;
 }
 nav a {
     color: #0066cc;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 0.625rem;
 }
 nav a:hover {
     color: #003366;
@@ -27,39 +49,39 @@ nav a:hover {
 .nav-container{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
 }
 /*Grid for cards*/
 .cards-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: 0.9375rem;
 }
 .cards{
     background-color: #f0f0f0;
-    padding: 10px;
+    padding: 0.625rem;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 0.0625rem solid #ccc;
 }
 main {
-    padding: 20px;
+    padding: 1.25rem;
 }
 #contact{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 1.25rem;
 }
 #contact label{
-    margin: 5px;
+    margin: 0.3125rem;
 }
 #contact input{
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 200px;
+    margin-bottom: 0.625rem;
+    padding: 0.3125rem;
+    width: 12.5rem;
 }
 #contact button{
-    padding: 5px 10px;
+    padding: 0.3125rem 0.625rem;
     background-color: #0066cc;
     color: white;
     border: none;
@@ -72,7 +94,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 20px;
+    padding: 1.25rem;
     text-align: center;
     align-items: center;
 }
@@ -85,31 +107,31 @@ main {
     padding-left: 0;
 }
 #interest li{
-    margin: 5px 0;
+    margin: 0.3125rem 0;
 }
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 0.625rem;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 /* Responsive adjustments for any device */
-@media (max-width: 600px){
+@media (max-width: 37.5rem){
     body{
-        font-size: 14px; /*smaller text on device*/
+        font-size: 0.875rem; /*smaller text on device*/
     }
     header h1{
-        font-size: 24px; /*to scale down heading*/
+        font-size: 1.5rem; /*to scale down heading*/
     }
     nav {
         display: flex;
         flex-direction: column; /*to stack links vertically*/
     }
     nav a{
-        margin: 5px 0;
+        margin: 0.3125rem 0;
     }
     .nav-container{
         flex-direction: column;
@@ -118,7 +140,7 @@ footer {
         grid-template-columns: 1fr;
     }
     .cards-grid:hover{
-        box-shadow: 0 0 10px grey;
+        box-shadow: 0 0 0.625rem grey;
     }
     #contact input{
         width: 100%; /*full width input*/
@@ -126,7 +148,7 @@ footer {
     img {
         width: 100%; /*responsive image*/
         height: auto;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        box-shadow: 0 0 0.625rem rgba(0,0,0,0.5);
     }
     footer {
         position: relative;

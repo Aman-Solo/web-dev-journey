@@ -6,8 +6,8 @@
         <title>My Landing Page</title>
         <link rel="stylesheet" href="styles.css">
     </head>
-    <a href="#main" class="skip-link">skip to main content</a>
     <body>
+        <a href="#main" class="skip-link">skip to main content</a>
         <header role="banner">
             <h1>Welcome to Site</h1>
         </header>
@@ -19,7 +19,7 @@
                 <a href="https://github.com/Aman-Solo/web-dev-journey" target="_blank">My GIT repo</a>
             </div>
         </nav>
-        <main role="main">
+        <main id="main" role="main">
             <section>
                 <h2>About Me</h2>
                 <p>learning web dev with odin project</p>
@@ -29,7 +29,7 @@
                 <h2>Contact Me</h2>
                 <form action="#" method="post">
                     <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required aira-required="true"><br>
+                    <input type="text" id="name" name="name" required aria-required="true"><br>
                     <label for="email">Email</label><br>
                     <input type="email" id="email" name="email" required aria-required="true"><br>
                     <button type="submit">Send</button><br>
@@ -51,7 +51,7 @@
             </section>
             <section id="cards" role="region" aria-labelledby="cards-heading">
                 <h2 id="cards-heading">My Skills</h2>   
-                <div class="cards-grid" role="lists" aria-label="List of skills">
+                <div class="cards-grid" role="list" aria-label="List of skills">
                     <div class="cards" role="listitem">HTML</div>
                     <div class="cards" role="listitem">CSS</div>
                     <div class="cards" role="listitem">Database</div>
