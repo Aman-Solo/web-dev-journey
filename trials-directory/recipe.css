@@ -56,6 +56,11 @@ ul, ol{
     font-size: 0.8rem;
     font-weight: bold;
 }
+@media (max-width: 768px){
+    .instructions{
+        grid-template-columns: 1fr;
+    }
+}
 footer{
     background-color: #333;
     color: white;
