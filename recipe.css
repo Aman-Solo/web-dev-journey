@@ -1,0 +1,67 @@
+:root{
+    font-size: 16px;
+    --card-bg: #f0f0f0;
+    --card-border: #333;
+    --button-bg: rgb(197, 81, 81);
+    --button-text: rgb(43, 2, 43);
+}
+body{
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+}
+header{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding:1rem;
+}
+main{
+    padding: 1.25rem;
+}
+.pasta-img{
+    max-width: 100%;
+}
+h2{
+    color:brown;
+}
+ul, ol{
+    padding-left: 1.25rem;
+}
+.instructions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding:1.25rem;
+}
+.instruction-step{
+    background-color: var(--card-bg);
+    padding:1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    position: relative;
+    padding-left: 3rem;
+}
+.instruction-step::before{
+    counter-increment: step-counter;
+    content: "step" counter(step-counter);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    background-color: var(--button-bg);
+    color:var(--button-text) ;
+    padding:0.25rem 0.5rem;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.625rem;
+    /*position:fixed;*/
+    bottom: 0;
+    width: 100%;
+}

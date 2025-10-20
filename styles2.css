@@ -1,0 +1,17 @@
+:root {
+    font-size: 16px;  /* Explicit root base (browser default) */
+}
+
+.parent {
+    font-size: 1.25rem;  /* 1.25 * root 16px = 20px (same as above) */
+}
+
+.child {
+    font-size: 1.5rem;   /* 1.5 * root 16px = 24px (ignores parent) */
+    margin: 1rem;        /* 1 * root 16px = 16px (consistent) */
+}
+
+.grandchild {
+    font-size: 1.2rem;   /* 1.2 * root 16px = 19.2px (no compounding) */
+    padding: 0.5rem;     /* 0.5 * root 16px = 8px (predictable) */
+}
