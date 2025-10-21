@@ -1,5 +1,18 @@
-:root{ font-size: 16px; }
+:root{
+    font-size: 16px;
+    --text-color: #000;
+    --bg-color: #fff; 
+}
+@media(prefers-contrast: high){
+    :root{
+        --text-color: #000;
+        --bg-color: #fff;
+    }
+}
 body {
+    color: var(--text-color);
+    background: var(--bg-color);
+    scroll-behavior: smooth;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -118,6 +131,16 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+#toggle-dark{
+    padding:0.5rem 1rem;
+    background-color: #0066cc;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+#toggle-dark:hover{
+    background-color: #003366;
 }
 /* Responsive adjustments for any device */
 @media (max-width: 37.5rem){
