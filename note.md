@@ -64,3 +64,8 @@ learnt how to make advanced grids. also solidified a bit of html and css.
 ->console.log(isAdult && isStudent): Logical AND. Why: Combine conditions. How: && both true. Pitfall: Short-circuit (if first false, skips second).
 
 also ive built a BMI calculator using function in js and math operations.
+
+## Day 2: js fundamentals control flow (conditions, loops) and reusability(functions).
+-> Conditionals: If/else for decisions. Why: Handles logic (e.g., user age check). How: If (true) execute, else alternative. **Pitfall: Loose == vs strict === (TOP warns loose coerces types, leading to bugs like '18' == 18 but '18' !== 18).**
+-> Loops: For/while for repetition. Why: Iterate arrays/objects (e.g., list hobbies). How: For (init; condition; increment) **loops fixed times; while for unknown.** Pitfall: Infinite loops (forget increment)—crash browser.
+-> Functions: Reusable code blocks. **Why: DRY (Don't Repeat Yourself—TOP mantra).** How: Define with function, call with (). Pitfall: Forgetting return—undefined output.
