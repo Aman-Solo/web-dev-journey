@@ -69,3 +69,9 @@ also ive built a BMI calculator using function in js and math operations.
 -> Conditionals: If/else for decisions. Why: Handles logic (e.g., user age check). How: If (true) execute, else alternative. **Pitfall: Loose == vs strict === (TOP warns loose coerces types, leading to bugs like '18' == 18 but '18' !== 18).**
 -> Loops: For/while for repetition. Why: Iterate arrays/objects (e.g., list hobbies). How: For (init; condition; increment) **loops fixed times; while for unknown.** Pitfall: Infinite loops (forget increment)—crash browser.
 -> Functions: Reusable code blocks. **Why: DRY (Don't Repeat Yourself—TOP mantra).** How: Define with function, call with (). Pitfall: Forgetting return—undefined output.
+-> **Challenge**: Even/odd loop—used % operator for remainder.
+
+## day 3: DOM manipulation.(Manipulate the DOM to change HTML/CSS dynamically and handle user events—turning static pages interactive.)
+-> DOM = document object model.
+-> DOM: Tree structure of HTML elements JS can access/modify. Why: Update page without reload (e.g., change text on click). How: document object. Pitfall: Wrong selector = null error. TOP: "DOM is the bridge between JS and HTML" in their JS course.
+-> Events: User actions (click, input). Why: Interactivity (e.g., button click). How: addEventListener. Pitfall: Inline onClick = bad (mixes JS/HTML)—use listeners. TOP: Events for games like Rock-Paper-Scissors.

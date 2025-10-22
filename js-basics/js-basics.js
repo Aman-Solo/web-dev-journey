@@ -22,7 +22,7 @@ let weight= 60;
 let height= 1.76;
 calculateBMI(weight, height);**/
 
-//DAY 2.
+/**DAY 2.
 let age = 25;
 if(age>18){
     console.log('Adult');
@@ -63,4 +63,20 @@ for(let i=0; i<array.length; i++){
     }else{
         console.log('odd');
     }
-}
+}**/
+
+//DAY 3: DOM
+window.addEventListener("DOMContentLoaded", function() {
+    const heading = document.querySelector('#myHeading');
+    heading.textContent = 'Updated';
+    heading.style.color = 'red';
+
+    const list = document.createElement('ul');
+    list.innerHTML = '<li>new item</li>';
+    document.body.appendChild(list);
+
+    const button = document.querySelector('#toggle-dark');
+    button.addEventListener('click', function() {
+        document.body.style.backgroundColor = 'darkgrey';
+    });
+});
