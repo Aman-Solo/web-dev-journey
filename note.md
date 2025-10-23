@@ -75,3 +75,9 @@ also ive built a BMI calculator using function in js and math operations.
 -> DOM = document object model.
 -> DOM: Tree structure of HTML elements JS can access/modify. Why: Update page without reload (e.g., change text on click). How: document object. Pitfall: Wrong selector = null error. TOP: "DOM is the bridge between JS and HTML" in their JS course.
 -> Events: User actions (click, input). Why: Interactivity (e.g., button click). How: addEventListener. Pitfall: Inline onClick = bad (mixes JS/HTML)—use listeners. TOP: Events for games like Rock-Paper-Scissors.
+
+## day 4: Day 4: Asynchronous JS (promises, async/await, fetch API)
+-> Asynchronous JS: Code that runs "later" (e.g., network requests). Why: Prevents blocking (UI freeze during loads). How: Callbacks/promises/async. Pitfall: Callback hell (nested callbacks)—use promises to avoid. TOP: Lesson uses async for weather APIs, stressing "JS is single-threaded, so async keeps things responsive."
+-> Promises: Object for future values. Why: Cleaner than callbacks. How: .then for success, .catch for error. Pitfall: Unhandled rejections = warnings.
+-> Async/Await: Sugar for promises. Why: Readable like sync code. How: Await pauses async function. Pitfall: Must be in async function—or top-level await in modules.
+-> Fetch: Built-in for HTTP requests. Why: Get data from APIs. How: Returns promise. Pitfall: No error on 404 (check response.ok).

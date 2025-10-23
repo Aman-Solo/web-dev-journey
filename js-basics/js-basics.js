@@ -66,17 +66,56 @@ for(let i=0; i<array.length; i++){
 }**/
 
 //DAY 3: DOM
-window.addEventListener("DOMContentLoaded", function() {
+
+
+window.addEventListener('DOMContentLoaded', function(){
     const heading = document.querySelector('#myHeading');
     heading.textContent = 'Updated';
     heading.style.color = 'red';
 
     const list = document.createElement('ul');
-    list.innerHTML = '<li>new item</li>';
+    list.innerHTML = '<li>new item</li>'
     document.body.appendChild(list);
 
     const button = document.querySelector('#toggle-dark');
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function(){
         document.body.style.backgroundColor = 'darkgrey';
+    })
+
+    const myPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(true){
+                resolve('Success!');
+            }else{
+                reject('Error!');
+            }
+        }, 1000);
     });
-});
+    myPromise.then(result => console.log(result))
+    .catch(error => console.log(error));
+
+    async function asyncFunction(){
+        try{
+            const result = await myPromise;
+            console.log(result);
+        } catch (error){
+            console.log(error);
+        }
+    }
+    asyncFunction();
+
+    async function fetchData(){
+        try{
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+            if(!response.ok){
+                throw new Error('Network Error');
+            }
+            const data = await response.json();
+            console.log(data.title);
+        }catch(error){
+            console.log(error);
+        }
+    }
+    fetchData();
+})
+
