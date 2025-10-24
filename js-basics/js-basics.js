@@ -81,24 +81,23 @@ window.addEventListener('DOMContentLoaded', function(){
     button.addEventListener('click', function(){
         document.body.style.backgroundColor = 'darkgrey';
     })
-
-    const myPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
+    const myPromise = new Promise((resolve, rejcet)=>{
+        this.setTimeout(()=>{
             if(true){
                 resolve('Success!');
             }else{
-                reject('Error!');
+                rejcet('Error!');
             }
         }, 1000);
     });
     myPromise.then(result => console.log(result))
-    .catch(error => console.log(error));
+    .catch(error=> console.log(error));
 
     async function asyncFunction(){
         try{
             const result = await myPromise;
             console.log(result);
-        } catch (error){
+        }catch(error){
             console.log(error);
         }
     }
@@ -106,16 +105,35 @@ window.addEventListener('DOMContentLoaded', function(){
 
     async function fetchData(){
         try{
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
             if(!response.ok){
                 throw new Error('Network Error');
             }
             const data = await response.json();
             console.log(data.title);
-        }catch(error){
-            console.log(error);
+        }catch (error){
+            console.log(error); 
         }
     }
     fetchData();
 })
+
+// day4
+const greet = (name)=> 'Hello ' + name +'!';
+console.log(greet('Aman'));
+const person = {name :'Aman', age: 21};
+const {name, age} = person;
+console.log(name, age);
+
+import {add} from './math.js';
+console.log(add(5,3));
+
+localStorage.setItem('keys', 'values');
+const saved = localStorage.getItem('keys');
+console.log(saved);
+
+const obj = {name : 'Aman'};
+localStorage.setItem('obj', JSON.stringify(obj));
+const retrived = JSON.parse(localStorage.getItem('obj'));
+console.log(retrived.name);
 
