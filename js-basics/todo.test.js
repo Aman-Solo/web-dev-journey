@@ -16,3 +16,13 @@ describe('todo-function',() => {
         expect(list.firstChild.textContent).toBe('Test Task');
     });
 });
+
+function isEven(num){
+    return num%2 === 0;
+}
+test('return false for 1 (odd number)', () => {
+    expect(isEven(1)).toBe(false);
+});
+test('returns true for 2 (even number)', () =>{
+    expect(isEven(2)).toBe(true);
+})

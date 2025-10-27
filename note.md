@@ -156,4 +156,9 @@ Updates the localStorage with the new list after deletion.
 **Day 6: unit testing with JEST**
 => Unit Testing: Test small code units (e.g., functions). Why: Catches bugs early (TOP: "Test or regret in projects like Tic-Tac-Toe"). How: Jest runs tests, asserts outputs. Pitfall: Poor tests = false confidence.
 => Jest: Popular library. Why: Simple, built-in assertions. How: describe/test/expect. Pitfall: No setup = no run—use npm.
-=> 
+=> !!! npm test only runs if the directory is indicating in the subfile you are working with right now not main.
+=> Jest runs in a Node.js environment, which doesn't have a browser DOM (no document, window, etc.). jsdom provides a simulated DOM environment so you can test browser-based code without an actual browser.
+=> jsdom is a development dependency because:
+    ->It's only needed during testing/development
+    ->Not needed in production
+    ->Jest automatically uses jsdom when it detects DOM API usage
