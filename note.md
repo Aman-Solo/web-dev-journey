@@ -100,3 +100,55 @@ It can be:
 =>**fetch()** is a built-in browser function that lets you make HTTP requests —
 like getting or sending data to a server.
 -> fetching is clean when used with async and await;
+
+**DAY 5**
+__This small To-Do List web app:__
+1)Lets you type a task and add it.
+2)Shows all tasks on the page.
+3)Saves the tasks to the browser’s localStorage, so they stay even after refresh.
+4)Adds a Delete button for each task to remove it both visually and from localStorage.
+
+1) Selecting elements from HTML
+=>document → represents the whole web page (the DOM).
+=>.querySelector() → finds an element using a CSS selector.
+=>#todo-input means: find the element whose id="todo-input".
+
+2) Listening for a button click
+=>.addEventListener() tells JavaScript:
+“When this event happens (in this case a click), run this code.”
+=>The () => {} part is an arrow function, a short way to define what should happen.
+
+3) Prevent adding empty tasks
+=>input.value → the text the user typed.
+=>.trim() → removes spaces from the start and end.
+=>If it’s empty, return stops the function.
+This prevents adding blank items.
+
+4) Create a new <li> item
+=>document.createElement('li') → creates a new list item element in memory.
+=>li.textContent → sets the text inside it (like typing inside the tag).
+=>Adding space with .style.marginLeft = '10px'
+
+5) Create a Delete button
+=>li.remove() → removes that list item from the screen.
+=>Array.from(list.children) → makes an array of all <li>s currently in the list.
+=>.map(...) → loops through each <li> to extract just the text (the todo name).
+replace('Delete', '') removes the button text from the stored string.
+=>localStorage.setItem('todos', JSON.stringify(updatedTodos))
+Updates the localStorage with the new list after deletion.
+
+6) Add the delete functionality
+=>appendChild() → attaches one element inside another.
+=>First line: put the button inside the <li>.
+=>Second line: put that <li> inside the <ul> (the list).
+
+7) Add the Delete button into each <li>
+=>localStorage → a built-in browser storage that saves data even after refresh.
+=>You can only save strings, not arrays.
+=>So you use JSON.stringify() to convert your array to a string.
+=>When you load it again, use JSON.parse() to convert back to an array.
+
+8) Save all todos to localStorage
+=>localStorage.getItem('todos') → gets the stored string.
+=>|| '[]' → if nothing was stored yet, use an empty array.
+=>JSON.parse() converts the saved text back into a real array.
