@@ -45,3 +45,6 @@ savedTodos.forEach((todo) => {
   li.appendChild(deleteBtn);
   list.appendChild(li);
 })
+input.addEventListener('keypress', (e) => {
+  if(e.key === 'Enter')button.click();
+});
