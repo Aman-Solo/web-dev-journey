@@ -152,3 +152,8 @@ Updates the localStorage with the new list after deletion.
 =>localStorage.getItem('todos') → gets the stored string.
 =>|| '[]' → if nothing was stored yet, use an empty array.
 =>JSON.parse() converts the saved text back into a real array.
+
+**Day 6: unit testing with JEST**
+=> Unit Testing: Test small code units (e.g., functions). Why: Catches bugs early (TOP: "Test or regret in projects like Tic-Tac-Toe"). How: Jest runs tests, asserts outputs. Pitfall: Poor tests = false confidence.
+=> Jest: Popular library. Why: Simple, built-in assertions. How: describe/test/expect. Pitfall: No setup = no run—use npm.
+=> 
