@@ -1,0 +1,19 @@
+# Node dependencies - TOP: Never commit node_modules; reinstall with npm i
+node_modules/
+
+# Build outputs - TOP: Generated, not source
+dist/
+build/
+
+# Logs/Temp - TOP: Transient, no value in Git
+*.log
+.tmp
+
+# IDE/OS artifacts - TOP: Personal, not project
+.vscode/
+.idea/
+*.DS_Store  # Mac
+Thumbs.db  # Windows
+
+# Env/Secrets - TOP: Never commit keys
+.env
