@@ -137,3 +137,34 @@ localStorage.setItem('obj', JSON.stringify(obj));
 const retrived = JSON.parse(localStorage.getItem('obj'));
 console.log(retrived.name);
 
+//DAY 7
+function outer(){
+    let counter = 0;
+
+    return function inner(){
+        counter ++;
+        return counter;
+    };
+}
+const myClosure = outer();
+console.log(myClosure());
+console.log(myClosure());
+
+const Obj = {
+    name: 'Aman',
+    greet: function(){
+        console.log(this.name);
+    }
+};
+Obj.greet();
+const boundGreet = Obj.greet.bind(Obj);
+boundGreet();
+
+function Person(name){
+    this.name = name;
+}
+Person.prototype.greet = function(){
+    return 'Hello, '+ this.name;
+}
+const aman = new Person('Aman');
+console.log(aman.greet());
