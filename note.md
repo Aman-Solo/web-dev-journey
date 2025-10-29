@@ -162,3 +162,8 @@ Updates the localStorage with the new list after deletion.
     ->It's only needed during testing/development
     ->Not needed in production
     ->Jest automatically uses jsdom when it detects DOM API usage
+
+**Day 7: Advanced JS (closures, this, prototypes)—critical for understanding scope and inheritance before frameworks**
+=> Closures: Function remembering its scope. Why: Encapsulate data (TOP: "Closures for private variables in Library app"). How: Inner function accesses outer vars. Pitfall: Memory leaks if holding large data.
+=> This: Context keyword. Why: Refers to object (TOP: "This in methods for Battleship game board"). How: Changes based on call (arrow fixes). Pitfall: Lost in callbacks—bind or arrow.
+=> Prototypes: Inheritance mechanism. Why: Share methods (TOP: "Prototypes for efficient objects in OOP projects"). How: proto chain. Pitfall: Modifying built-ins = bad.
