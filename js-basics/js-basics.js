@@ -193,3 +193,33 @@ function counter(name){
 const c = new counter('Amanua');
 c.start();
 setTimeout(() => c.stop(), 5000);
+
+function createBank(initialBalance){
+    let balance = initialBalance;
+    return{
+        deposite: function(amount){
+            if(amount>0){
+                balance += amount;
+                return 'Deposited: '+amount+' New Balance: '+ balance;
+            }else{
+                return 'invalid amount';
+            }
+        },
+        withdraw: function(amount){
+            if(amount >0 && amount <= balance){
+                balance -= amount;
+                return 'Withdraw: '+amount+ ', new balance: '+balance;
+            }else{
+                return 'insufficien funds';
+            }
+        },
+        getBalance: function(){
+            return balance;
+        }
+    };
+}
+const myAccount = createBank(100);
+console.log(myAccount.deposite(50));
+console.log(myAccount.withdraw(60));
+console.log(myAccount.getBalance());
+console.log(myAccount.balance);
