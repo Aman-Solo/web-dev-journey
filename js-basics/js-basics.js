@@ -168,3 +168,28 @@ Person.prototype.greet = function(){
 }
 const aman = new Person('Aman');
 console.log(aman.greet());
+
+function counter(name){
+    this.name = name;
+    let count = 0;
+    let interValid = null;
+
+    this.start = function(){
+        if (interValid) return;
+        interValid = setInterval(() => {
+            count++;
+            console.log(`${this.name}'s count: ${count}`);
+        }, 1000);
+    };
+    this.stop = function(){
+        clearInterval(interValid);
+        interValid = null;
+        console.log(`${this.name}'s counter stopped.`);
+    };
+    this.getCount = function() {
+        return count;
+    };
+}
+const c = new counter('Amanua');
+c.start();
+setTimeout(() => c.stop(), 5000);
