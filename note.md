@@ -164,6 +164,37 @@ Updates the localStorage with the new list after deletion.
     ->Jest automatically uses jsdom when it detects DOM API usage
 
 **Day 7: Advanced JS (closures, this, prototypes)—critical for understanding scope and inheritance before frameworks**
-=> Closures: Function remembering its scope. Why: Encapsulate data (TOP: "Closures for private variables in Library app"). How: Inner function accesses outer vars. Pitfall: Memory leaks if holding large data.
-=> This: Context keyword. Why: Refers to object (TOP: "This in methods for Battleship game board"). How: Changes based on call (arrow fixes). Pitfall: Lost in callbacks—bind or arrow.
+=> __Closures__: Function remembering its scope. Why: Encapsulate data (TOP: "Closures for private variables in Library app"). How: Inner function accesses outer vars. Pitfall: Memory leaks if holding large data.
+**function outer()**
+->Defines a function.
+->Inside it, a variable counter = 0 is created.
+->That variable only exists inside outer() normally.
+**return function inner()**
+->The outer function returns another function (inner).
+->The returned function still remembers the variables that existed in outer — even after outer() finishes running.
+**const myClosure = outer();**
+->Calls outer(), which returns the inner function.
+->So now myClosure points to that inner function.
+**myClosure()**
+->When you call it the first time:
+..It increases counter from 0 → 1.
+..Returns 1.
+->When you call it again:
+..counter is still remembered from last time (1).
+..It increases to 2 and returns 2.
+✅Normally, when a function finishes, all its variables disappear.
+But closures “close over” their outer variables — keeping them alive.
+So counter is private — only the returned function can access or change it.
+This is how we make private variables in JavaScript!
+
+=> __This__: Context keyword. Why: Refers to object (TOP: "This in methods for Battleship game board"). How: Changes based on call (arrow fixes). Pitfall: Lost in callbacks—bind or arrow.
+
+->.bind(Obj) creates a new function that permanently binds this to the object Obj.
+->this depends on how a function is called, not where it’s defined.
+If you lose the “owner” (Obj), this breaks.
+.bind() fixes that.
+
 => Prototypes: Inheritance mechanism. Why: Share methods (TOP: "Prototypes for efficient objects in OOP projects"). How: proto chain. Pitfall: Modifying built-ins = bad.
+
+->Instead of copying functions to every new object, JS stores them in one shared place — the prototype.
+->It’s how inheritance and shared behavior work.
