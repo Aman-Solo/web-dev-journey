@@ -223,3 +223,22 @@ console.log(myAccount.deposite(50));
 console.log(myAccount.withdraw(60));
 console.log(myAccount.getBalance());
 console.log(myAccount.balance);
+
+function Animal(type){
+    this.type = type;
+}
+Animal.prototype.makeSound = function(){
+    return 'Generic Sound';
+};
+function Dog(name){
+    Animal.call(this,'Dog');
+    this.name = name;
+}
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.makeSound = function(){
+    return 'Woof!';
+};
+const myDog = new Dog('buddy');
+console.log(myDog.makeSound());
+console.log(myDog.type);
