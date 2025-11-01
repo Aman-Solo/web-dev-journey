@@ -1,0 +1,24 @@
+# Node dependencies - TOP: Never commit; reinstall with npm i
+node_modules/
+.pnp
+.pnp.js
+
+# Build/Logs - TOP: Generated, not source
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# React CRA specific - TOP: Ignore for clean repos in React projects
+build/
+*.env
+
+# IDE/OS - TOP: Personal, not project
+.vscode/
+.idea/
+*.swp
