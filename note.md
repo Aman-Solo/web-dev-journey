@@ -198,3 +198,7 @@ If you lose the “owner” (Obj), this breaks.
 
 ->Instead of copying functions to every new object, JS stores them in one shared place — the prototype.
 ->It’s how inheritance and shared behavior work.
+
+**Day8: the start of REACT**
+=> React: Library for UIs. Why: Declarative (describe what, not how)—efficient rerenders (TOP: "React for scalable apps like CV Builder"). How: Components as functions/classes. Pitfall: Thinking it's a framework—it's not; add Redux for state later.
+=> Challenge: Person component—used props for dynamic text.
