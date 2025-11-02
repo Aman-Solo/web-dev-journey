@@ -202,3 +202,8 @@ If you lose the “owner” (Obj), this breaks.
 **Day8: the start of REACT**
 => React: Library for UIs. Why: Declarative (describe what, not how)—efficient rerenders (TOP: "React for scalable apps like CV Builder"). How: Components as functions/classes. Pitfall: Thinking it's a framework—it's not; add Redux for state later.
 => Challenge: Person component—used props for dynamic text.
+
+__Day9 : Introduce state for managing changing data in components, using useState hook to create interactive UIs—turning props-only components into dynamic ones.__
+=> State: Component's memory for data that changes (TOP: "State for user input in forms"). Why: Triggers re-renders on update. How: useState hook. Pitfall: Direct mutate = no re-render—use setter.
+=> useState: Hook for state. Why: Functional components (TOP: "Hooks over classes for simplicity"). How: const [value, setValue] = useState(initial). Pitfall: Hooks top-level only—no conditionals/loops.
+=> Re-renders: React updates UI on state change. Why: Declarative. Pitfall: Infinite loops if setter in render.
