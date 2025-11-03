@@ -207,3 +207,10 @@ __Day9 : Introduce state for managing changing data in components, using useStat
 => State: Component's memory for data that changes (TOP: "State for user input in forms"). Why: Triggers re-renders on update. How: useState hook. Pitfall: Direct mutate = no re-render—use setter.
 => useState: Hook for state. Why: Functional components (TOP: "Hooks over classes for simplicity"). How: const [value, setValue] = useState(initial). Pitfall: Hooks top-level only—no conditionals/loops.
 => Re-renders: React updates UI on state change. Why: Declarative. Pitfall: Infinite loops if setter in render.
+
+__Day10: Advanced Hooks (useEffect, useContext)__
+**Goal**: Explore useEffect for side effects (e.g., data fetching, subscriptions) and useContext for sharing state without prop drilling—enabling complex, maintainable apps.
+
+__=>useEffect__: Run code on mount/update/unmount. Why: Handle side effects like fetches (TOP: "useEffect for API calls in Weather App"). How: useEffect(fn, [deps]). Pitfall: No deps = infinite loop; empty [] = mount only.
+__=>useContext__: Share data tree-wide. Why: Avoid prop drilling (TOP: "Context for themes in CV app"). How: createContext, Provider, useContext. Pitfall: Overuse = performance hit—use for global like themes/auth.
+__=>TOP Tie-In__: Their React lesson uses useEffect for cleanup in timers and useContext for app-wide state in forms, stressing "hooks for lifecycle without classes."
