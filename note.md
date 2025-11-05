@@ -214,3 +214,48 @@ __Day10: Advanced Hooks (useEffect, useContext)__
 __=>useEffect__: Run code on mount/update/unmount. Why: Handle side effects like fetches (TOP: "useEffect for API calls in Weather App"). How: useEffect(fn, [deps]). Pitfall: No deps = infinite loop; empty [] = mount only.
 __=>useContext__: Share data tree-wide. Why: Avoid prop drilling (TOP: "Context for themes in CV app"). How: createContext, Provider, useContext. Pitfall: Overuse = performance hit—use for global like themes/auth.
 __=>TOP Tie-In__: Their React lesson uses useEffect for cleanup in timers and useContext for app-wide state in forms, stressing "hooks for lifecycle without classes."
+
+code explanation for day 10. starting from what happened in ThemeContext.
+**import React, { createContext, useState } from 'react';**
+What’s happening:
+    You’re bringing in:
+        createContext → lets you create a “context,” like a global data store that any component can use.
+        useState → manages internal state (like whether dark mode is on or off).
+So React will know this file uses state + shared context logic.
+
+**export const ThemeContext = createContext();**
+Explanation:
+    This creates an empty context object.
+    Think of it like a “global variable” that React components can subscribe to.
+    You export it so other files (like App.js or Greeting.js) can use it via:
+    **import { ThemeContext } from './ThemeContext';**
+When a component reads from this context, it will get whatever data you provide later (the value in the provider).
+
+**export function ThemeProvider({ children }) {**
+    A Provider is a special component that gives context data to all its children.
+    { children } means anything you wrap inside <ThemeProvider> ... </ThemeProvider> in JSX.
+Example usage (you’ll see this in your App.js):
+<ThemeProvider>
+  <App />
+</ThemeProvider>
+Everything inside (App in this case) gets access to the context.
+
+**const [isDark, setIsDark] = useState(false);**
+What this does:
+    Declares a state variable:
+        isDark → the current value (starts as false, meaning light mode)
+        setIsDark → function to change that value (toggle dark/light)
+So this context will control whether your app is in dark mode or light mode.
+
+
+return (
+  <ThemeContext.Provider value={{ isDark, setIsDark }}>
+    {children}
+  </ThemeContext.Provider>
+);
+What’s happening:
+    You’re wrapping everything inside the ThemeContext.Provider.
+    The value prop gives any consumer access to { isDark, setIsDark }.
+That means anywhere in your app, if a component calls:
+const { isDark, setIsDark } = useContext(ThemeContext);
+…it will get access to this shared state, no prop-passing needed!
