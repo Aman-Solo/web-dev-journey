@@ -259,3 +259,15 @@ What’s happening:
 That means anywhere in your app, if a component calls:
 const { isDark, setIsDark } = useContext(ThemeContext);
 …it will get access to this shared state, no prop-passing needed!
+
+whats happening in greetings.js
+
+**import React, { useState, useEffect, useContext } from 'react';**
+**import { ThemeContext } from './ThemeContext';**
+✅ Explanation:
+    useState → lets this component remember changing values (count).
+    useEffect → lets this component run side effects (like logs, API calls, or cleanup).
+    useContext → allows it to access data shared globally through ThemeContext (from your provider).
+By importing { ThemeContext }, this file can now read and update the theme data.
+
+the others are literally understandable things but reffer in the future
