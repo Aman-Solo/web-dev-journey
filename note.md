@@ -212,7 +212,10 @@ __Day10: Advanced Hooks (useEffect, useContext)__
 **Goal**: Explore useEffect for side effects (e.g., data fetching, subscriptions) and useContext for sharing state without prop drilling—enabling complex, maintainable apps.
 
 __=>useEffect__: Run code on mount/update/unmount. Why: Handle side effects like fetches (TOP: "useEffect for API calls in Weather App"). How: useEffect(fn, [deps]). Pitfall: No deps = infinite loop; empty [] = mount only.
+=> useEffect → to handle side effects like fetching data from the internet.
 __=>useContext__: Share data tree-wide. Why: Avoid prop drilling (TOP: "Context for themes in CV app"). How: createContext, Provider, useContext. Pitfall: Overuse = performance hit—use for global like themes/auth.
+=> useContext → to use our shared global state.
+__=>useState__:for small local state (input text).
 __=>TOP Tie-In__: Their React lesson uses useEffect for cleanup in timers and useContext for app-wide state in forms, stressing "hooks for lifecycle without classes."
 
 code explanation for day 10. starting from what happened in ThemeContext.
