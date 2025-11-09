@@ -1,9 +1,11 @@
 import React, {useEffect, useContext, useState} from 'react';
 import {TasksContext} from './TasksContext';
+import {useParams, Link} from 'react-router-dom';
 
 function Todo(){
     const {tasks, setTasks} = useContext(TasksContext);
     const [newTask, setNewTask] = useState('');
+    const {id} = useParams();
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
@@ -27,6 +29,26 @@ function Todo(){
         setTasks(updated);
     };
 
+    if(id){
+        const index = parseInt(id, 10);
+        const task = tasks[index];
+
+        return(
+        <div>
+            <h2>Task #{id}</h2>
+            {task ? (
+                <>
+                  <p><b>Title:</b> {task}</p>
+                  <p><b>Index:</b> {index}</p>      
+                  <Link to='/todo'>back to all tasks</Link>     
+                </>
+            ):(
+                <p>loading or invalid task</p>
+            )}
+        </div>
+    );
+    }
+
     return(
         <div>
             <h2>To-Do List</h2>
@@ -43,7 +65,8 @@ function Todo(){
                 {tasks.map((task, index)=>(
                     <li key={index}>
                         {task}
-                        <button onClick = {() => deleteTask(index)}>Delete</button>
+                        <Link to={`/todo/${index}`}>{task}</Link> 
+                        <button onClick = {() => deleteTask(index)} style={{marginLeft:'10px'}}>Delete</button>
                     </li>
                 ))}
             </ul>

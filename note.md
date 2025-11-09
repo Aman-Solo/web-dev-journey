@@ -274,3 +274,5 @@ whats happening in greetings.js
 By importing { ThemeContext }, this file can now read and update the theme data.
 
 the others are literally understandable things but reffer in the future
+
+__Day 11: react routing__
