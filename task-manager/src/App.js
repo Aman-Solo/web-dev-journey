@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Home';
 import Tasks from './Tasks';
 import About from './About';
+import Settings from './settings';
 
 function App(){
   return(
@@ -13,14 +14,17 @@ function App(){
         <Home />
       </header>*/}
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/Tasks">Tasks</Link>
-        <Link to="/About">About</Link>
+        <Link to="/" style={{margin: '0 10px'}}>Home</Link>
+        <Link to="/Tasks" style={{margin: '0 10px'}}>Tasks</Link>
+        <Link to="/About" style={{margin: '0 10px'}}>About</Link>
+        <Link to="/Settings" style={{margin: '0 10px'}}>Settings</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/tasks" element={<Tasks />}/>
+        <Route path="/tasks:id" element={<Tasks />}/>
         <Route path="/About" element={<About />}/>
+        <Route path="/Settings" element={<Settings />}/>
       </Routes>
     </div>
   );
