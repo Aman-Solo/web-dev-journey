@@ -30,7 +30,7 @@ function App(){
           <nav>
             <Link to="/" style={{marginRight:'10px'}}>Home</Link>
             <Link to="/greeting">Greeting</Link>
-            <Link to="/Todo">To-Do</Link>
+            <Link to="/Todo" style={{marginLeft:'10px'}}>To-Do</Link>
           </nav>
           <Routes>
             <Route path="/" element={<Home />}/>
