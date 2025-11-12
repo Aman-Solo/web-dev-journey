@@ -1,9 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {useParams} from 'react-router-dom';
+import {ThemeContext} from './ThemeContext';
 
 function Tasks(){
     const {id} = useParams();
     console.log('Task id', id);
+
+    const{isDark}=useContext(ThemeContext);
 
     const [tasks, setTasks] = useState([]);
     const [input, setInput] = useState('');
@@ -40,7 +43,7 @@ function Tasks(){
         setEditingText('');
     }
     return(
-        <div>
+        <div style={{background:isDark? '#2f4f4f':'white', color:isDark? 'white':'#2f4f4f'}}>
             <h1>Tasks List</h1>
             {id && <p>Viewing Task ID: {id}</p>}
             <input type="text" value={input} onChange={(e)=>setInput(e.target.value)} placeholder="Add Task"/>
