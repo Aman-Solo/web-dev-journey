@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from './ThemeContext';
-import { CompletedProvider } from './CompletedContext';
+import { CompletedProvider } from './completedContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

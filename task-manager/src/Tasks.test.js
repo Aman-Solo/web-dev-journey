@@ -2,7 +2,7 @@ import React from 'react';
 import {render, screen, fireEvent} from '@testing-library/react';
 import Tasks from './Tasks';
 import {ThemeProvider} from './ThemeContext';
-import {CompletedProvider} from './CompletedContext';
+import {CompletedProvider} from './completedContext';
 
 function renderWithProviders(ui){
     return render(

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './ThemeContext';
-import { CompletedProvider } from './CompletedContext';
+import { CompletedProvider } from './completedContext';
 test('renders navigation links',()=>{
   render(
     <BrowserRouter>

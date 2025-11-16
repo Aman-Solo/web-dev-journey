@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
 import{Routes, Route, Link} from 'react-router-dom';
 import {ThemeContext} from './ThemeContext';
-import {completedContext} from './CompletedContext';
+import {completedContext} from './completedContext';
 import './App.css';
 import Home from './Home';
 import Tasks from './Tasks';
