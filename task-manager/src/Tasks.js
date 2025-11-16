@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {useParams} from 'react-router-dom';
 import {ThemeContext} from './ThemeContext';
-import {completedContext} from './completedContext';
+import {CompletedContext} from './CompletedContext';
 
 function Tasks(){
     const {id} = useParams();
