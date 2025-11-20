@@ -1,9 +1,9 @@
 import React, {useEffect, useContext, useState} from 'react';
-import {TasksContext} from './TasksContext';
+import {TaskContext} from './ThemeContext';
 import {useParams, Link} from 'react-router-dom';
 
 function Todo(){
-    const {tasks, setTasks} = useContext(TasksContext);
+    const {state: tasks, dispatch} = useContext(TaskContext);
     const [newTask, setNewTask] = useState('');
     const {id} = useParams();
 
@@ -11,22 +11,37 @@ function Todo(){
         fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
         .then((res) => res.json())
         .then((data)=>{
-            const fetchedTasks = data.map((task) => task.title);
-            setTasks(fetchedTasks);
+            data.forEach(task =>{
+                dispatch({
+                    type: "ADD_TASK",
+                    payload: task.title
+                });
+            });
         })
         .catch((error) => console.log('Error fetching tasks: ', error));
-    }, [setTasks]);
+    }, [dispatch]);
 
     const addTask = () =>{
-        if(newTask.trim() === '')return;
-        const updated = [...tasks,newTask];
-        setTasks(updated);
+        if(newTask.trim()==='')return;
+
+        dispatch({
+            type: 'ADD_TASK',
+            payload: newTask
+        });
         setNewTask('');
     };
 
     const deleteTask = (index) => {
-        const updated = tasks.filter((_, i) =>i !== index);
-        setTasks(updated);
+        dispatch({
+            type: 'DELETE_TASK',
+            payload: index
+        });
+    };
+    const toggleComplete = (index) => {
+        dispatch({
+            type: 'TOGGLE_COMPLETE',
+            payload: index
+        });
     };
 
     if(id){
@@ -38,8 +53,8 @@ function Todo(){
             <h2>Task #{id}</h2>
             {task ? (
                 <>
-                  <p><b>Title:</b> {task}</p>
-                  <p><b>Index:</b> {index}</p>      
+                  <p><b>Title:</b> {task?.text}</p>
+                  <p><b>Completed:</b> {task.done? 'yes' : 'No'}</p>      
                   <Link to='/todo'>back to all tasks</Link>     
                 </>
             ):(
@@ -63,10 +78,20 @@ function Todo(){
 
             <ul>
                 {tasks.map((task, index)=>(
-                    <li key={index}>
-                        {task}
-                        <Link to={`/todo/${index}`}>{task}</Link> 
-                        <button onClick = {() => deleteTask(index)} style={{marginLeft:'10px'}}>Delete</button>
+                    <li key={index} style={{textDecoration: task.done ? 'line-through' : 'none', marginTop: '10px'}}>
+                        <input
+                          type = "checkbox"
+                          checked = {task.done}
+                          onChange = {() => toggleComplete(index)}
+                        />
+                        
+                        <Link to = {`/todo/${index}`}>
+                          {task.text}
+                        </Link>
+
+                        <button onClick={() => deleteTask(index)} style={{marginLeft:'10px'}}>
+                            Delete
+                        </button>
                     </li>
                 ))}
             </ul>
