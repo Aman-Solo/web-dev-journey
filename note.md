@@ -278,3 +278,7 @@ the others are literally understandable things but reffer in the future
 __Day 11: react routing__
 
 react routing 
+
+__Day 13: mastering forms and validation__:
+=> validation: in this section its all about making error messages for example in add task if we want the number of characters to be tasked greater than 3 and if anything less than that happens we can create an alert or error.
+=> 
