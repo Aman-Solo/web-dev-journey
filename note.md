@@ -282,3 +282,11 @@ react routing
 __Day 13: mastering forms and validation__:
 => validation: in this section its all about making error messages for example in add task if we want the number of characters to be tasked greater than 3 and if anything less than that happens we can create an alert or error.
 => 
+
+## Day 1: Back-End Development: Node.js & Express
+GOAL: Build server-side apps with Node.js runtime and Express framework for APIs—handling requests, routes, and data
+
+day 1: installed express and studied GET and POST
+these two are type of routes like backbone to backend.
+GET route: when someone makes a GET request like app.get to homepage of '/' then we can request and response(req, res).
+POST API in this we can now send data to assigned place for example in this we used '/tasks'.
