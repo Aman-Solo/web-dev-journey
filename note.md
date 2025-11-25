@@ -290,3 +290,9 @@ day 1: installed express and studied GET and POST
 these two are type of routes like backbone to backend.
 GET route: when someone makes a GET request like app.get to homepage of '/' then we can request and response(req, res).
 POST API in this we can now send data to assigned place for example in this we used '/tasks'.
+
+## Day 2: error handling and more on middleware.
+Goal: Enhance your server with middleware for logging/validation, error handling for graceful failures, and more endpoints for CRUD—building a reliable API.
+__Middleware__ functions in request response(req, res) style. why => logging/validation.
+__Error Handling__ Catch failure.
+__CRUD endpoints__ GET/POST/PUT/DELETE.
