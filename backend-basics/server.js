@@ -28,7 +28,6 @@ let tasks = [];
 app.get('/tasks', (req, res) =>{
     res.json(tasks);
 });
-
 app.post('/tasks', (req, res)=>{
     const newTask = req.body.task;
     tasks.push(newTask);
