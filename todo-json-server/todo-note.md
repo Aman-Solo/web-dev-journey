@@ -10,6 +10,14 @@ __2nd PORTION:__ => Create React (CRA) for front-end. -> __CRA__ handles bundlin
                  =>add basic routing for Home/tasks Page. ->__routing__ sets up views for the spec (e.g., /tasks for list)
                  => npm dependencies
                  => SPA navigation for app structure. -> __SPA__ = a technique where a website loads a single HTML page initially and then dynamically updates content using JavaScript as users interact.
-    => here we have to separate frontend from back so that it calls API.
-    => install __npx create-react-app__ so, Bootstraps React with dev server, Babel for JSX, Webpack for bundling—focus on code, not tools.              
+    -> here we have to separate frontend from back so that it calls API.
+    -> install __npx create-react-app__ so, Bootstraps React with dev server, Babel for JSX, Webpack for bundling—focus on code, not tools.
+
+__3rd PORTION:__ => Update the Tasks component to fetch GET /todos from the backend (localhost:3001/todos)
+                 => display tasks in a styled layout with all fields (title, description, category, due date)
+                 => revise async fetch
+                 => useEffect for mount
+                 => map for rendering
+                 => basic CSS for cards to sink in API integration and UI.
+    -> in this portion in detail we are going to Branches out the front-end by connecting to the backend API, revising fetch/useEffect from our main track's async JS, PLUS and adding styling to match the spec's "styled layout" without bloat. This ensures dynamic display from mock data.            
      

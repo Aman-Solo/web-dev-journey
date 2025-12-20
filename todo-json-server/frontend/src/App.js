@@ -1,10 +1,8 @@
 import React from 'react';
 import {Routes, Route, Link} from 'react-router-dom';
+import Tasks from './Tasks';
 function Home(){
   return <h1>Home</h1>;
-}
-function Tasks(){
-  return <h1>Tasks</h1>
 }
 function About(){
   return <h1>About</h1>
@@ -19,7 +17,7 @@ function App(){
       </nav>
       <Routes>
         <Route Path="/" element={<Home/>}/>
-        <Route path="/taska" element={<Tasks />}/>
+        <Route path="/tasks" element={<Tasks />}/>
         <Route Path="/About" element={<About />}/>
       </Routes>
     </div>
