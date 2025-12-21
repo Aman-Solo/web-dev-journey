@@ -97,6 +97,20 @@ function Tasks(){
         }
     };
 
+    // DELETE
+    const deleteTask = async(id)=>{
+        if(!window.confirm('Delete task?'))return;
+        try{
+            const response = await fetch(`http://localhost:3001/todos/${id}`,{
+                method: 'DELETE'
+            });
+            if(!response.ok)throw new Error('Delete Failed');
+            fetchTasks();
+        }catch(error){
+            console.error('Error Deleteing Task');
+        }
+    };
+
     // SORTING
     const sortedTasks = [...tasks].sort((a, b)=>{
         const dateA = new Date(a.dueDate);
@@ -140,7 +154,10 @@ function Tasks(){
                                 <p>Due Date: {task.dueDate}</p>
                                 <input type="checkbox" checked={task.completed || false} onChange={()=>ToggleCompleted(task.id)}/>
                                 <label>Completed</label>
-                                <button onClick={()=> startEdit(task)} style={{marginLeft:'10px'}}>Edit</button>
+                                <div style={{marginTop: '10px'}}>
+                                    <button onClick={()=> startEdit(task)} style={{marginLeft:'10px'}}>Edit</button>
+                                    <button onClick={()=> deleteTask(task.id)} style={{marginLeft:'10px', color:'red'}}>Delete</button>
+                                </div>
                             </div>
                         )}
                     </li>

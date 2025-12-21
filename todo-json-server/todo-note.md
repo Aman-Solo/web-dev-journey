@@ -46,4 +46,8 @@ __6th PORTION:__ => add edit function for each fields (title, description, categ
                  => then re-fetch GET to refresh list
     -> here revising conditional rendering, multi-field state, and partial PATCH to sink in update operations.
 
+__7th PORTION:__ =>
+                 =>
+                 =>
+
      
