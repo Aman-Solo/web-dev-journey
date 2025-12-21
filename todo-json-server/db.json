@@ -7,10 +7,24 @@
       "dueDate": "2025-12-12"
     },
     {
-      "title": "test task 2",
+      "title": "Test task 2",
       "description": "test discription for task 2",
       "category": "Personal",
       "dueDate": "2025-12-26"
+    },
+    {
+      "id": "33e7",
+      "title": "rearrange CBE accounts by tomorrow",
+      "description": "",
+      "category": "Bank",
+      "dueDate": "2025-12-21"
+    },
+    {
+      "id": "7047",
+      "title": "Sunday Yeka morning Hike",
+      "description": "Remember to set alarm saturday night",
+      "category": "Hobby",
+      "dueDate": "2025-12-22"
     }
   ]
 }

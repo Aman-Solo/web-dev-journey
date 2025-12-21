@@ -19,5 +19,17 @@ __3rd PORTION:__ => Update the Tasks component to fetch GET /todos from the back
                  => useEffect for mount
                  => map for rendering
                  => basic CSS for cards to sink in API integration and UI.
-    -> in this portion in detail we are going to Branches out the front-end by connecting to the backend API, revising fetch/useEffect from our main track's async JS, PLUS and adding styling to match the spec's "styled layout" without bloat. This ensures dynamic display from mock data.            
+    -> in this portion in detail we are going to Branches out the front-end by connecting to the backend API, revising fetch/useEffect from our main track's async JS, PLUS and adding styling to match the spec's "styled layout" without bloat. This ensures dynamic display from mock data.
+
+__4th PORTION:__ => Add a form in Tasks.js for creating tasks with all fields (title, description, category, due date)
+                 => handle submit with async POST /todos to backend
+                 => then re-fetch GET to update list—revising controlled inputs
+                 => onChange/onClick events
+                 => async fetch with body to sink in create operations.
+    -> here we are branching out the APP with user input to create DATA
+    -> revise form handling from react state/event.
+    -> POST to match spec API behavior
+    # Also as an addittional challenge, added Validation—used if check, pitfall with no trim for empty strings.
+    == these ensure additions are carried on to backend.
+
      
