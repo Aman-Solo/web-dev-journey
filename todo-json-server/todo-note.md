@@ -41,4 +41,9 @@ __5th PORTION:__ => add checkbox for each task so that we mark as complete.
     => for the challenge i added sorting system for it assending to decending and viceversa
         => i'll use a derived state pattern. Instead of changing the original tasks array, create a sorted version of it right before rendering. by creating a new array [...tasks] so we don't mutate the original state directly.
 
+__6th PORTION:__ => add edit function for each fields (title, description, category, due date)
+                 => handle save with async PATCH /todos/:id to update backend
+                 => then re-fetch GET to refresh list
+    -> here revising conditional rendering, multi-field state, and partial PATCH to sink in update operations.
+
      
