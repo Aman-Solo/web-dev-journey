@@ -32,4 +32,13 @@ __4th PORTION:__ => Add a form in Tasks.js for creating tasks with all fields (t
     # Also as an addittional challenge, added Validation—used if check, pitfall with no trim for empty strings.
     == these ensure additions are carried on to backend.
 
+__5th PORTION:__ => add checkbox for each task so that we mark as complete.
+                 => to handle changes on backend ill use async PATCH/todos:id to update completed.
+                 => then re-Fetch GET to refresh list to revise event, partial PATCH and params to sink-in update operations
+    -> for the mark completed requirment => branchout with partial updates.
+    -> revising onChange from form and fetching with method/headers/body 
+    -> These ensure Toggle persistiong on backend.
+    => for the challenge i added sorting system for it assending to decending and viceversa
+        => i'll use a derived state pattern. Instead of changing the original tasks array, create a sorted version of it right before rendering. by creating a new array [...tasks] so we don't mutate the original state directly.
+
      
