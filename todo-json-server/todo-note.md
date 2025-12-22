@@ -46,8 +46,9 @@ __6th PORTION:__ => add edit function for each fields (title, description, categ
                  => then re-fetch GET to refresh list
     -> here revising conditional rendering, multi-field state, and partial PATCH to sink in update operations.
 
-__7th PORTION:__ =>
-                 =>
-                 =>
+__7th PORTION:__ => decided to add a dark theme button in the nav
+                 => by using useContext to share this addition across the d/nt pages
+                 => applying conditional styles to components (e.g. background/color in div/li).
+    -> here i will revise shared state and conditional rendering 
 
      

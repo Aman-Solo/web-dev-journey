@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import { ThemeContext } from './ThemeContext';
 function Tasks(){
     // STATES
     const[tasks, setTasks] = useState([]);
@@ -13,6 +14,8 @@ function Tasks(){
     const[editDescription, setEditDescription] = useState('');
     const[editCategory, setEditCategory] = useState('');
     const[editDueDate, setEditDueDate] = useState('');
+
+    const{isDark} = useContext(ThemeContext);
 
     // DATA FETCHING
     async function fetchTasks(){
@@ -118,7 +121,7 @@ function Tasks(){
         return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
     });
     return(
-        <div style={{padding: '20px'}}>
+        <div style={{background: isDark ? 'darkgrey':'white', color: isDark ? 'white':'black',padding: '20px', minHeight:'100vh', transition:'all 0.3s ease'}}>
             <h1>Task List</h1>
             <form onSubmit={(e)=>{e.preventDefault(); addTask();}} style={{marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '300px'}}>
                 <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} placeholder="Title" />
@@ -134,7 +137,7 @@ function Tasks(){
             </div>
             <ul>
                 {sortedTasks.map(task => (
-                    <li key={task.id} style={{border:'1px solid grey', margin:'10px', padding:'10px', backgroundColor: task.completed ? '#77dd77ff' : 'white'}}>
+                    <li key={task.id} style={{background: isDark ? '#333' : 'white',margin:'10px', padding:'10px', backgroundColor: task.completed ? '#77dd77ff' : 'white', border: isDark ? '1px solid #444':'1px solid grey'}}>
                         {editingId === task.id ? (
                             <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
                                 <input type="text" value={editTitle} onChange={(e)=>setEditTitle(e.target.value)}/>
