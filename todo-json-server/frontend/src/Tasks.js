@@ -15,6 +15,8 @@ function Tasks(){
     const[editCategory, setEditCategory] = useState('');
     const[editDueDate, setEditDueDate] = useState('');
 
+    const[filterCategory, setFilterCategory] = useState('All');
+
     const{isDark} = useContext(ThemeContext);
 
     // DATA FETCHING
@@ -114,12 +116,18 @@ function Tasks(){
         }
     };
 
+    const filteredTasks = tasks.filter(task=>{
+        if(filterCategory === 'All')return true;
+        return task.category === filterCategory;
+    });
+
     // SORTING
-    const sortedTasks = [...tasks].sort((a, b)=>{
+    const displayedTasks = [...filteredTasks].sort((a, b)=>{
         const dateA = new Date(a.dueDate);
         const dateB = new Date(b.dueDate);
         return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
     });
+    const uniqueCategory = [...new Set(tasks.map(t=>t.category))].filter(Boolean);
     return(
         <div style={{background: isDark ? 'darkgrey':'white', color: isDark ? 'white':'black',padding: '20px', minHeight:'100vh', transition:'all 0.3s ease'}}>
             <h1>Task List</h1>
@@ -130,14 +138,23 @@ function Tasks(){
                 <input type="date" value={dueDate} onChange={(e)=>setDueDate(e.target.value)} />
                 <button type="submit">Add Task</button>
             </form>
-            <div style={{marginBottom: '20px'}}>
+            <div style={{marginBottom: '20px', display: 'flex', gap: '15px'}}>
                 <button onClick={()=>setSortOrder(sortOrder==='asc' ? 'desc' : 'asc')}>
                     Sort by Date: {sortOrder === 'asc' ? '(oldest first)' : '(newest first)'}
                 </button>
+                <div>
+                    <label>Filter: </label>
+                    <select value={filterCategory} onChange={(e)=>setFilterCategory(e.target.value)}>
+                        <option value="All">All Categories</option>
+                        {uniqueCategory.map(cat=>(
+                            <option key={cat} value={cat}>{cat}</option>
+                        ))}
+                    </select>
+                </div>
             </div>
-            <ul>
-                {sortedTasks.map(task => (
-                    <li key={task.id} style={{background: isDark ? '#333' : 'white',margin:'10px', padding:'10px', backgroundColor: task.completed ? '#77dd77ff' : 'white', border: isDark ? '1px solid #444':'1px solid grey'}}>
+            <ul style={{padding:0}}>
+                {displayedTasks.map(task => (
+                    <li key={task.id} style={{margin:'10px 0', padding:'10px',listStyle:'none', background: task.completed ? '#2e4d2e' : (isDark ? '#333' : '#f9f9f9'), border: isDark ? '1px solid #444':'1px solid grey #ddd',borderRadius: '5px'}}>
                         {editingId === task.id ? (
                             <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
                                 <input type="text" value={editTitle} onChange={(e)=>setEditTitle(e.target.value)}/>
@@ -151,7 +168,7 @@ function Tasks(){
                             </div>
                         ) : (
                             <div>
-                                <h2 style={{textDecoration: task.completed ? 'line-through' : 'none'}}>{task.title}</h2>
+                                <h2 style={{textDecoration: task.completed ? 'line-through' : 'none', margin: 0}}>{task.title}</h2>
                                 <p>{task.description}</p>
                                 <p>Category: {task.category}</p>
                                 <p>Due Date: {task.dueDate}</p>
